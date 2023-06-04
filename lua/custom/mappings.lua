@@ -43,6 +43,10 @@ M.disabled = {
     ["<leader>th"] = "",
 
     ["<leader>ma"] = "",
+
+    -- which-key
+    ["<leader>wK"] = "",
+    ["<leader>wk"] = "",
   },
   -- i = {
   --   -- go to  beginning and end

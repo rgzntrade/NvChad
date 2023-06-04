@@ -18,6 +18,14 @@ local plugins = {
   },
 
   {
+    "folke/which-key.nvim",
+    keys = { "<leader>", " "},
+    config = function()
+      require("custom.configs.which-key")
+    end,
+  },
+
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
