@@ -16,6 +16,7 @@ local plugins = {
       -- require "custom.configs.lspconfig"
     end,
   },
+
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -29,12 +30,33 @@ local plugins = {
       --   `nvim-notify` is only needed, if you want to use the notification view.
       --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
-      config = function ()
+      config = function()
         require "custom.configs.notify"
-      end
+      end,
     },
-    config = function ()
+    config = function()
       require "custom.configs.noice"
+    end,
+  },
+
+  {
+    "ggandor/leap.nvim",
+    lazy = false,
+    dependencies = {
+      "tpope/vim-repeat",
+    },
+    config = function()
+      require "custom.configs.leap"
+    end,
+  },
+
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require "custom.configs.lualine"
     end,
   },
 

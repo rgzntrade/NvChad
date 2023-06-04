@@ -1,3 +1,5 @@
+-- 加速启动
+vim.loader.enable()
 -- Leader Key
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
