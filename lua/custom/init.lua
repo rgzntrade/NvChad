@@ -59,7 +59,5 @@ vim.o.list = true
 vim.o.listchars = "space: ,tab:→ ,trail:-,precedes:«,extends:…,nbsp:+,eol:⏎"
 -- 补全增强
 vim.o.wildmenu = true
--- 永远显示 tabline
-vim.o.showtabline = 2
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
 vim.o.showmode = false
