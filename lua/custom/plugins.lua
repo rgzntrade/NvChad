@@ -42,6 +42,7 @@ local plugins = {
       "kkharji/sqlite.lua",
     },
     config = function()
+      require "plugins.configs.telescope"
       require "custom.configs.telescope"
     end,
   },
@@ -84,6 +85,74 @@ local plugins = {
     },
     config = function()
       require "custom.configs.leap"
+    end,
+  },
+
+  {
+    "jcdickinson/http.nvim",
+    build = "cargo build --workspace --release",
+  },
+
+  {
+    "jcdickinson/codeium.nvim",
+    dependencies = {
+      "jcdickinson/http.nvim",
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("codeium").setup {}
+    end,
+  },
+
+  -- load luasnips + cmp related in insert mode only
+  {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    dependencies = {
+      {
+        -- snippet plugin
+        "L3MON4D3/LuaSnip",
+        dependencies = "rafamadriz/friendly-snippets",
+        opts = { history = true, updateevents = "TextChanged,TextChangedI" },
+        config = function(_, opts)
+          require("plugins.configs.others").luasnip(opts)
+        end,
+      },
+
+      -- autopairing of (){}[] etc
+      {
+        "windwp/nvim-autopairs",
+        opts = {
+          fast_wrap = {},
+          disable_filetype = { "TelescopePrompt", "vim" },
+        },
+        config = function(_, opts)
+          require("nvim-autopairs").setup(opts)
+
+          -- setup cmp for autopairs
+          local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+          require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
+        end,
+      },
+
+      -- cmp sources plugins
+      {
+        "saadparwaiz1/cmp_luasnip",
+        "hrsh7th/cmp-nvim-lua",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "jcdickinson/codeium.nvim",
+        "tzachar/cmp-tabnine",
+         build = "./install.sh",
+      },
+    },
+    opts = function()
+      return require "custom.configs.cmp"
+    end,
+    config = function(_, opts)
+      require("cmp").setup(opts)
     end,
   },
 
