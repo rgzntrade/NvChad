@@ -97,6 +97,13 @@ local plugins = {
     end,
   },
 
+  {
+    "Shatur/neovim-session-manager",
+    lazy = false,
+    config = function()
+      require "custom.configs.nvim-session-manager"
+    end,
+  },
   -- You can use any plugin specification from lazy.nvim
   -- TODO 解除注释
   -- {
