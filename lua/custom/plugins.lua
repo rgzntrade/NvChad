@@ -19,10 +19,39 @@ local plugins = {
 
   {
     "folke/which-key.nvim",
-    keys = { "<leader>", " "},
+    keys = { "<leader>", " " },
     config = function()
-      require("custom.configs.which-key")
+      require "custom.configs.which-key"
     end,
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+      },
+      "nvim-telescope/telescope-ui-select.nvim",
+      "nvim-telescope/telescope-project.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-dap.nvim",
+      "nvim-telescope/telescope-frecency.nvim",
+      "kkharji/sqlite.lua",
+    },
+    config = function()
+      require "custom.configs.telescope"
+    end,
+  },
+
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "theHamsta/nvim-dap-virtual-text",
+      "rcarriga/nvim-dap-ui",
+    },
   },
 
   {
