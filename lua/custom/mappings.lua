@@ -13,6 +13,9 @@ M.disabled = {
     -- Clear highlights
     ["<Esc>"] = "",
 
+    -- NvCheatsheet
+    ["<leader>ch"] = "",
+
     -- switch between windows
     ["<C-h>"] = "",
     ["<C-l>"] = "",
@@ -54,7 +57,7 @@ M.disabled = {
 }
 
 -- Your custom mappings
-M.windows= {
+M.windows = {
   n = {
     -- switch between windows
     ["<leader>wh"] = { "<C-w>h", "移动到左侧窗口" },
@@ -75,8 +78,7 @@ M.windows= {
   },
 }
 
-
-M.telescope= {
+M.telescope = {
   n = {
     -- switch between windows
     ["<leader>wh"] = { "<C-w>h", "移动到左侧窗口" },
@@ -96,7 +98,10 @@ M.telescope= {
     ["<leader><leader>="] = { "<C-w>=", "等比显示" },
     -- Telescope
     ["<leader>tf"] = { ":Telescope find_files<CR>", "Telescope 文件名称搜索" },
-    ["<leader>tF"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Telescope 所有文件名搜索" },
+    ["<leader>tF"] = {
+      "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>",
+      "Telescope 所有文件名搜索",
+    },
     ["<leader>tl"] = { ":Telescope live_grep<CR>", "Telescope 文件内容搜索" },
     ["<leader>tb"] = { ":Telescope buffers<CR>", "Telescope buffer名称搜索" },
     ["<leader>tm"] = { ":Telescope marks<CR>", "Telescope marks搜索" },
@@ -136,6 +141,7 @@ M.nvim = {
   n = {
     -- 取消高亮
     ["<Esc>"] = { ":noh <CR>", "Clear highlights", opt },
+    ["<leader>k"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
   },
 
   i = {
