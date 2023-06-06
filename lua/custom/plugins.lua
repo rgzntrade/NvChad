@@ -48,11 +48,33 @@ local plugins = {
   },
 
   {
+    "stevearc/dressing.nvim",
+    opts = {},
+    config = function()
+      require "custom.configs.dressing"
+    end,
+  },
+
+  {
     "mfussenegger/nvim-dap",
     dependencies = {
       "theHamsta/nvim-dap-virtual-text",
       "rcarriga/nvim-dap-ui",
     },
+    config = function()
+      require "custom.debug-dap.dap-config"
+      require "custom.debug-dap.dap-ui"
+      require "custom.debug-dap.dap-virtual-text"
+      require "custom.debug-dap.dap-util"
+    end,
+  },
+
+  {
+    "Shatur/neovim-cmake",
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.neovim-cmake"
+    end,
   },
 
   {
@@ -145,17 +167,34 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-      ensure_installed = {"c", "cpp", "bash", "python", "lua", "rust", "yaml", "json", "toml"},
+      ensure_installed = { "c", "cpp", "bash", "python", "lua", "rust", "yaml", "json", "toml" },
+    },
+    dependencies = {
+      "romgrk/nvim-treesitter-context",
+      "nvim-treesitter/nvim-treesitter-textobjects",
     },
   },
 
   {
     "williamboman/mason.nvim",
     opts = {
-        ensure_installed = { "lua-language-server", "clangd", "clang-format",
-        "rust-analyzer", "rustfmt", "pylyzer", "bash-language-server",
-        "yaml-language-server", "json-lsp", "taplo", "codelldb", "debugpy",
-        "sonarlint-language-server", "blue", "prettier"}, -- not an option from mason.nvim
+      ensure_installed = {
+        "lua-language-server",
+        "clangd",
+        "clang-format",
+        "rust-analyzer",
+        "rustfmt",
+        "pylyzer",
+        "bash-language-server",
+        "yaml-language-server",
+        "json-lsp",
+        "taplo",
+        "codelldb",
+        "debugpy",
+        "sonarlint-language-server",
+        "blue",
+        "prettier",
+      }, -- not an option from mason.nvim
     },
   },
 

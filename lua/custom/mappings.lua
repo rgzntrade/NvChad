@@ -137,6 +137,29 @@ M.nvterm = {
   },
 }
 
+M.debug = {
+  n = {
+    -- debug
+    ["<F9>"] = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "", opt },
+    ["<leader>dc"] = { "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", "", opt },
+    ["<leader>dm"] = {
+      "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>",
+      "",
+      opt,
+    },
+    ["<leader>dr"] = { "lua require'dap'.repl.open()<cr>", "", opt },
+    ["<Leader>dl"] = { "<cmd>lua require'dap'.run_last()<cr>", "", opt },
+    ["<C-F5>"] = { '<cmd>lua require"debug-dap.dap-util".reload_continue()<CR>', "", opt },
+    ["<S-F5>"] = { "<cmd>lua require'dap'.terminate()<cr>", "", opt },
+    ["<F5>"] = { "<cmd>lua require'dap'.continue()<cr>", "", opt },
+    ["<F10>"] = { "<cmd>lua require'dap'.step_over()<cr>", "", opt },
+    ["<F11>"] = { "<cmd>lua require'dap'.step_into()<cr>", "", opt },
+    ["<F12>"] = { "<cmd>lua require'dap'.step_out()<cr>", "", opt },
+    ["<leader>K"] = { "<cmd>lua require'dapui'.eval()<cr>", "", opt },
+    -- keymap("n", "<leader>dt", "<cmd>lua require'dapui'.toggle()<cr>", opt)
+  },
+}
+
 M.nvim = {
   n = {
     -- 取消高亮
