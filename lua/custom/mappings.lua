@@ -140,14 +140,16 @@ M.nvterm = {
 M.nvim = {
   n = {
     -- 取消高亮
-    ["<Esc>"] = { ":noh <CR>", "Clear highlights", opt },
-    ["<leader>k"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
+    ["<leader>ch"] = { ":noh <CR>", "Clear highlights", opt },
+    ["<leader>cs"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
   },
 
   i = {
     -- insert 模式下，跳到行首行尾
-    ["<C-h>"] = { "<ESC>I", "移动到最左侧" },
-    ["<C-l>"] = { "<ESC>A", "移动到最右侧" },
+    ["<C-^>"] = { "<ESC>I", "移动到最左侧" },
+    -- 无效
+    ["<C-$>"] = { "<ESC>A", "移动到最右侧" },
+    ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
   },
 }
 
