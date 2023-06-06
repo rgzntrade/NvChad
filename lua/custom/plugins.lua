@@ -140,24 +140,24 @@ local plugins = {
       require "custom.configs.nvim-session-manager"
     end,
   },
-  -- You can use any plugin specification from lazy.nvim
-  -- TODO 解除注释
-  -- {
-  --   "Pocco81/TrueZen.nvim",
-  --   cmd = { "TZAtaraxis", "TZMinimalist" },
-  --   config = function()
-  --     require "custom.configs.truezen" -- just an example path
-  --   end,
-  -- },
 
   -- this opts will extend the default opts
-  -- TODO 解除注释
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   opts = {
-  --     ensure_installed = {"html", "css", "bash"},
-  --   },
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {"c", "cpp", "bash", "python", "lua", "rust", "yaml", "json", "toml"},
+    },
+  },
+
+  {
+    "williamboman/mason.nvim",
+    opts = {
+        ensure_installed = { "lua-language-server", "clangd", "clang-format",
+        "rust-analyzer", "rustfmt", "pylyzer", "bash-language-server",
+        "yaml-language-server", "json-lsp", "taplo", "codelldb", "debugpy",
+        "sonarlint-language-server", "blue", "prettier"}, -- not an option from mason.nvim
+    },
+  },
 
   -- if you load some function or module within your opt, wrap it with a function
   -- TODO 解除注释
