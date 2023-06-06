@@ -89,14 +89,8 @@ local plugins = {
   },
 
   {
-    "jcdickinson/http.nvim",
-    build = "cargo build --workspace --release",
-  },
-
-  {
     "jcdickinson/codeium.nvim",
     dependencies = {
-      "jcdickinson/http.nvim",
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
     },
@@ -104,6 +98,7 @@ local plugins = {
       require("codeium").setup {}
     end,
   },
+
 
   -- load luasnips + cmp related in insert mode only
   {
@@ -144,8 +139,7 @@ local plugins = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "jcdickinson/codeium.nvim",
-        "tzachar/cmp-tabnine",
-         build = "./install.sh",
+        { "tzachar/cmp-tabnine", build = "./install.sh"},
       },
     },
     opts = function()
