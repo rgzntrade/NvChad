@@ -144,6 +144,8 @@ local plugins = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "jcdickinson/codeium.nvim",
+        "tzachar/cmp-tabnine",
+         build = "./install.sh",
       },
     },
     opts = function()
