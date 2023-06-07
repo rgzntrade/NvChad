@@ -11,7 +11,8 @@ dap.adapters.codelldb = {
   executable = {
     -- CHANGE THIS to your path!
     -- pvim.notify("rust-tools")
-    command = vim.env.HOME .. '/.config/nvim/debug/mac/' .. 'extension/adapter/codelldb',
+    -- command = vim.env.HOME .. '/.config/nvim/debug/mac/' .. 'extension/adapter/codelldb',
+    command = vim.fn.stdpath "data" .. "/mason/bin/codelldb",
     args = {"--port", "${port}"},
 
     -- On windows you may have to uncomment this:
