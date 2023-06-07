@@ -77,7 +77,7 @@ local function config_debuggers()
     -- require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'cpp' } })
     -- config per launage
     -- require("dap.dap-cpp")
-    -- require("dap.dap-python")
+    require("custom.debug-dap.dap-python")
     -- require("dap.dap-lua")
     require("custom.debug-dap.dap-rust")
   end

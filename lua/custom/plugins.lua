@@ -167,7 +167,7 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-      ensure_installed = { "c", "cpp", "bash", "python", "lua", "rust", "yaml", "json", "toml" },
+      ensure_installed = { "c", "cpp", "bash", "python", "lua", "rust", "yaml", "json", "toml", "cmake" },
     },
     dependencies = {
       "romgrk/nvim-treesitter-context",
@@ -194,6 +194,8 @@ local plugins = {
         "sonarlint-language-server",
         "blue",
         "prettier",
+        "cmake-language-server",
+        "cmakelang"
       }, -- not an option from mason.nvim
     },
   },
