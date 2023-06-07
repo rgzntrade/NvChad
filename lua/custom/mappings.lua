@@ -26,6 +26,10 @@ M.disabled = {
     ["<C-b>"] = "",
     ["<C-e>"] = "",
 
+    -- nvimtree
+    ["<leader>e"] = "",
+    ["<C-n>"] = "",
+
     -- Telescope
     ["<leader>ff"] = "",
     ["<leader>fa"] = "",
@@ -157,6 +161,14 @@ M.debug = {
     ["<F12>"] = { "<cmd>lua require'dap'.step_out()<cr>", "", opt },
     ["<leader>K"] = { "<cmd>lua require'dapui'.eval()<cr>", "", opt },
     -- keymap("n", "<leader>dt", "<cmd>lua require'dapui'.toggle()<cr>", opt)
+  },
+}
+
+M.nvimtree = {
+  plugin = true,
+  n = {
+    ["<leader>tE"] = { ":NvimTreeClose<CR>", "Toggle nvimtree" },
+    ["<leader>te"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
   },
 }
 
