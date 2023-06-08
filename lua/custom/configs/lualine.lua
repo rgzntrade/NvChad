@@ -7,7 +7,7 @@ end
 
 lualine.setup {
   options = {
-    theme = "onelight",
+    theme = "onedark",
     component_separators = { left = "|", right = "|" },
     -- https://github.com/ryanoasis/powerline-extra-symbols
     section_separators = { left = " ", right = "" },
@@ -53,12 +53,12 @@ lualine.setup {
       --   cond = require("noice").api.status.mode.has,
       --   color = { fg = "#ff9e64" },
       -- },
-      "search",
-      {
-        require("noice").api.status.search.get,
-        cond = require("noice").api.status.search.has,
-        color = { fg = "#ff9e64" },
-      },
+      -- "search",
+      -- {
+      --   require("noice").api.status.search.get,
+      --   cond = require("noice").api.status.search.has,
+      --   color = { fg = "#ff9e64" },
+      -- },
       "encoding",
       "filetype",
     },
