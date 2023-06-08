@@ -167,8 +167,8 @@ M.debug = {
 M.nvimtree = {
   plugin = true,
   n = {
-    ["<leader>tE"] = { ":NvimTreeClose<CR>", "Toggle nvimtree" },
-    ["<leader>te"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
+    ["<leader>E"] = { ":NvimTreeClose<CR>", "Toggle nvimtree" },
+    ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
   },
 }
 

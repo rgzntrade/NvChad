@@ -10,7 +10,6 @@ dap.adapters.codelldb = {
   port =  "${port}",
   executable = {
     -- CHANGE THIS to your path!
-    -- pvim.notify("rust-tools")
     -- command = vim.env.HOME .. '/.config/nvim/debug/mac/' .. 'extension/adapter/codelldb',
     command = vim.fn.stdpath "data" .. "/mason/bin/codelldb",
     args = {"--port", "${port}"},
@@ -22,14 +21,14 @@ dap.adapters.codelldb = {
 
 -- vim.notify("dap-config")
 
-dap.configurations.rust = {
+dap.configurations.cpp = {
   -- launch exe
   {
     name = "Launch file",
     type = "codelldb",
     request = "launch",
     program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '\\', 'file')
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
     --args = function()
     --  local input = vim.fn.input("Input args: ")
@@ -52,7 +51,7 @@ dap.configurations.rust = {
     request = "attach",
     processId = require('dap.utils').pick_process,
     program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '\\', 'file')
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
     cwd = "${workspaceFolder}",
     setupCommands = {
@@ -67,6 +66,6 @@ dap.configurations.rust = {
 }
 
 -- setup other language
-dap.configurations.c = dap.configurations.rust
-dap.configurations.cpp = dap.configurations.rust
+dap.configurations.c = dap.configurations.cpp
+dap.configurations.rust = dap.configurations.cpp
 

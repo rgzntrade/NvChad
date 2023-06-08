@@ -196,7 +196,7 @@ local plugins = {
         "blue",
         "prettier",
         "cmake-language-server",
-        "cmakelang"
+        "cmakelang",
       }, -- not an option from mason.nvim
     },
   },

@@ -76,10 +76,10 @@ local function config_debuggers()
     -- load from json file
     -- require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'cpp' } })
     -- config per launage
-    -- require("dap.dap-cpp")
+    require("custom.debug-dap.dap-cpp")
     require("custom.debug-dap.dap-python")
     -- require("dap.dap-lua")
-    require("custom.debug-dap.dap-rust")
+    -- require("custom.debug-dap.dap-rust")
   end
 
 
