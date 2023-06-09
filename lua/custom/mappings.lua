@@ -172,6 +172,13 @@ M.nvimtree = {
   },
 }
 
+M.clang_extension = {
+  plugin = true,
+  n = {
+    ["<A-o>"] = { "<cmd>ClangdSwitchSourceHeader<cr>", "切换头文件"}
+  },
+}
+
 M.nvim = {
   n = {
     -- 取消高亮

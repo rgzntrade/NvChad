@@ -82,6 +82,13 @@ local plugins = {
   },
 
   {
+    "p00f/clangd_extensions.nvim",
+    config = function ()
+     require "custom.lsp.clang-extension"
+    end,
+  },
+
+  {
     "voldikss/vim-translator",
     lazy = false,
   },
