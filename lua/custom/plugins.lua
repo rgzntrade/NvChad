@@ -213,6 +213,7 @@ local plugins = {
         "prettier",
         "cmake-language-server",
         "cmakelang",
+        "shellcheck",
       }, -- not an option from mason.nvim
     },
   },
