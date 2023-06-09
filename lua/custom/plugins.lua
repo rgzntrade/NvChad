@@ -78,6 +78,15 @@ local plugins = {
   },
 
   {
+    "d86leader/vim-cpp-helper",
+  },
+
+  {
+    "voldikss/vim-translator",
+    lazy = false,
+  },
+
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {

@@ -30,10 +30,10 @@ dap.configurations.cpp = {
     program = function()
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
-    --args = function()
-    --  local input = vim.fn.input("Input args: ")
-    --  return require("debug-dap.dap-util").str2argtable(input)
-    --end,
+    args = function()
+     local input = vim.fn.input("Input args: ")
+     return require("debug-dap.dap-util").str2argtable(input)
+    end,
     cwd = '${workspaceFolder}',
     stopOnEntry = false,
     setupCommands = {
