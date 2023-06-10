@@ -1,3 +1,10 @@
+local utils = require("custom.utils")
+
+local cpp_file_types = { "cpp", "cxx", "h", "hpp", "hxx" }
+local cmake_file_types = { "cmake", "txt" }
+local cmake_and_cpp_file_types = utils.array.union(cmake_file_types, cpp_file_types)
+
+
 local plugins = {
 
   -- TODO 解除注释
@@ -71,7 +78,7 @@ local plugins = {
 
   {
     "Shatur/neovim-cmake",
-    event = "VeryLazy",
+    ft = cmake_and_cpp_file_types,
     config = function()
       require "custom.configs.neovim-cmake"
     end,
@@ -79,12 +86,14 @@ local plugins = {
 
   {
     "d86leader/vim-cpp-helper",
+    ft = cpp_file_types,
   },
 
   {
     "p00f/clangd_extensions.nvim",
-    config = function ()
-     require "custom.lsp.clang-extension"
+    ft = cpp_file_types,
+    config = function()
+      require "custom.lsp.clangd-extension"
     end,
   },
 
@@ -117,7 +126,7 @@ local plugins = {
 
   {
     "ggandor/leap.nvim",
-    lazy = false,
+    event = "InsertEnter",
     dependencies = {
       "tpope/vim-repeat",
     },
@@ -144,6 +153,7 @@ local plugins = {
       {
         "tzachar/cmp-tabnine",
         build = "./install.sh",
+        event = "InsertEnter",
         config = function()
           local tabnine = require "cmp_tabnine.config"
           tabnine:setup {} -- put your options here
@@ -151,6 +161,7 @@ local plugins = {
       },
       {
         "jcdickinson/codeium.nvim",
+        event = "InsertEnter",
         dependencies = {
           "nvim-lua/plenary.nvim",
         },
